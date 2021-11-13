@@ -1,5 +1,18 @@
-// import { useState, useEffect } from "react";
+import useUser from "../../hooks/useUser";
 const LoginForm = () => {
+  const initialData = {
+    username: "",
+    password: "",
+  };
+
+  const { loginUser } = useUser(initialData);
+
+  const testData = {
+    username: "testuser",
+    password: "testpassword",
+  };
+  loginUser(testData);
+
   return (
     <form>
       <div className="form-group">
