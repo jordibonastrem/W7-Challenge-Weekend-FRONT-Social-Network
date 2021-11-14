@@ -1,8 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./pages/Home/Home";
+
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 const App = () => {
-  return <Home></Home>;
+  return <LoginPage></LoginPage>;
 };
 export default App;
