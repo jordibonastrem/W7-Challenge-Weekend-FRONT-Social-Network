@@ -16,6 +16,7 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     loginUser(user);
   };
   const handleOnChange = (event) => {
