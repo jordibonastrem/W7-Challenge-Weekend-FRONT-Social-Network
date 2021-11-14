@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { userPaths } from "../../paths/paths";
-import { loginUserAction } from "../actions/actionCreators";
+import { loginUserAction, getUsersAction } from "../actions/actionCreators";
 
 export const loginUserThunk = (user) => async (dispatch) => {
   const res = await axios.post(
@@ -36,5 +36,5 @@ export const getUsersThunk = () => async (dispatch) => {
       headers: { Authorization: "Bearer " + token },
     }
   );
-  // dispatch(f)
+  dispatch(getUsersAction(users));
 };
