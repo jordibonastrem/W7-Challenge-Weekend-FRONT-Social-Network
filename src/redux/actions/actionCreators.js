@@ -9,3 +9,8 @@ export const logoutUserAction = (user) => ({
   type: actionTypes.logoutUser,
   user,
 });
+
+export const getUsersAction = (users) => ({
+  type: actionTypes.getUsers,
+  users,
+});
