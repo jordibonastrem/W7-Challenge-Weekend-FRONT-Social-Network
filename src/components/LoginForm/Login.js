@@ -27,6 +27,7 @@ const LoginForm = () => {
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
+          placeholder="Username"
           type="text"
           className="form-control"
           onChange={handleOnChange}
@@ -36,6 +37,7 @@ const LoginForm = () => {
       <div className="form-group">
         <label htmlFor="password">Password</label>
         <input
+          placeholder="Password"
           type="password"
           className="form-control"
           onChange={handleOnChange}

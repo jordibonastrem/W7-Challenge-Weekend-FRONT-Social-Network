@@ -1,6 +1,7 @@
 import LoginForm from "./Login";
 import { screen } from "@testing-library/react";
 import renderWithProviders from "../../utils/testing-utils/renderWithProviders";
+import userEvent from "@testing-library/user-event";
 
 describe("Given a component LoginForm", () => {
   describe("When its rendered", () => {
@@ -14,6 +15,28 @@ describe("Given a component LoginForm", () => {
       expect(usernameLabel).toBeInTheDocument();
       expect(passwordLabel).toBeInTheDocument();
       expect(buttontext).toBeInTheDocument();
+    });
+  });
+
+  describe("If username input or password input are empty", () => {
+    test("The button Login should be disabled", () => {
+      renderWithProviders(<LoginForm />);
+      const buttontext = screen.getByText("Login");
+      expect(buttontext).toBeDisabled();
+    });
+  });
+
+  describe("If username input and password input are not empty", () => {
+    test("The button Login should be enabled", () => {
+      renderWithProviders(<LoginForm />);
+      const usernameInput = screen.getByPlaceholderText("Username");
+      userEvent.type(usernameInput, "testUser");
+
+      const passwordInput = screen.getByPlaceholderText("Password");
+      userEvent.type(passwordInput, "testPassword");
+      const buttontext = screen.getByText("Login");
+
+      expect(buttontext).toBeEnabled();
     });
   });
 });
