@@ -8,7 +8,7 @@ export const loginUserThunk = (user) => async (dispatch) => {
       `${process.env.REACT_APP_API_URL}users/login`,
       user
     );
-    console.log("EWEW");
+
     if (res.status === 200) {
       const {
         data: { token },
