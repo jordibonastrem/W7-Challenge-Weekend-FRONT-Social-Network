@@ -23,3 +23,18 @@ describe("Given a loginUserAction", () => {
     });
   });
 });
+
+describe("Given a logoutUserAction", () => {
+  describe("When it recieves a user", () => {
+    test("Then it should return a object containing the actionType loginUser, and the user recieved", () => {
+      const expectedOutput = {
+        type: actionTypes.logoutUser,
+        user,
+      };
+
+      const result = logoutUserAction(user);
+
+      expect(result).toEqual(expectedOutput);
+    });
+  });
+});
