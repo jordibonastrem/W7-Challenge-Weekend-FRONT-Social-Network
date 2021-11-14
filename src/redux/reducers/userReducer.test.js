@@ -22,4 +22,16 @@ describe("Given a userReducer reducer", () => {
       expect(newUserState).toHaveProperty("isAuthenticated", true);
     });
   });
+  describe("When it recieves a logoutUser action", () => {
+    test("Then  should return a new userState withthe property isAuthenticated to false", () => {
+      const action = {
+        type: actionTypes.logoutUser,
+        user: user,
+      };
+
+      const newUserState = userReducer(user, action);
+
+      expect(newUserState).toHaveProperty("isAuthenticated", false);
+    });
+  });
 });
