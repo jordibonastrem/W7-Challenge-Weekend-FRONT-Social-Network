@@ -15,7 +15,7 @@ export const loginUserThunk = (user) => async (dispatch) => {
     } = res;
 
     const user = jwtDecode(token);
-    console.log(JSON.stringify(user));
+
     dispatch(loginUserAction(user));
 
     localStorage.setItem(
@@ -26,15 +26,23 @@ export const loginUserThunk = (user) => async (dispatch) => {
 };
 
 export const getUsersThunk = () => async (dispatch) => {
-  const { token } = JSON.parse(
-    localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
-  );
+  // const { token } = JSON.parse(
+  // //   localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
+  // // );
 
-  const users = await axios.get(
-    process.env.REACT_APP_API_URL + userPaths.getUsers,
-    {
-      headers: { Authorization: "Bearer " + token },
-    }
+  const { data: users } = await axios.get(
+    process.env.REACT_APP_API_URL + userPaths.getUsers
   );
+  console.log(users);
   dispatch(getUsersAction(users));
+
+  // const response = await fetch(
+  //   process.env.REACT_APP_API_URL + userPaths.getUsers,
+  //   {
+  //     method: "GET",
+  //   }
+  // );
+  // const users = await response.json();
+
+  // dispatch(getUsersAction(users));
 };

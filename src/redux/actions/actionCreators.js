@@ -14,3 +14,5 @@ export const getUsersAction = (users) => ({
   type: actionTypes.getUsers,
   users,
 });
+
+// export const getUsersAction = (users) => console.log(users);

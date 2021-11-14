@@ -1,17 +1,17 @@
 import actionTypes from "../actions/actionTypes";
 
 const userListReducer = (users = [], action) => {
-  let newUsersState;
+  let newUsersState = users;
 
   switch (action.type) {
     case actionTypes.getUsers:
       newUsersState = [...action.users];
       break;
+
     default:
-      newUsersState = users;
-      return;
   }
 
+  console.log("reducer:" + newUsersState);
   return newUsersState;
 };
 
