@@ -1,5 +1,5 @@
 import useUser from "../../hooks/useUser";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const LoginForm = () => {
   const initialUser = {
     username: "",
@@ -8,6 +8,11 @@ const LoginForm = () => {
 
   const { loginUser } = useUser(initialUser);
   const [user, setUser] = useState(initialUser);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    setButtonDisabled(user.username === "" || user.password === "");
+  }, [user.username, user.password]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,7 +42,11 @@ const LoginForm = () => {
           id="password"
         />
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={buttonDisabled}
+      >
         Login
       </button>
     </form>
