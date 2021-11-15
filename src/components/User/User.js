@@ -1,5 +1,5 @@
 import useUser from "../../hooks/useUser";
-import "./User.css";
+
 const User = ({ user }) => {
   return (
     <div class="card">
