@@ -10,7 +10,6 @@ const Home = () => {
     getUsers();
   }, [getUsers]);
 
-  console.log("Home" + usersList);
   return (
     <>
       {/* {usersList.map((user) => (
