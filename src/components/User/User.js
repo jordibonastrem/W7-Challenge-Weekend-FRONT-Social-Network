@@ -2,12 +2,12 @@ import useUser from "../../hooks/useUser";
 
 const User = ({ user }) => {
   return (
-    <div class="card">
-      <img class="card-img-top" src={user.img} alt="user" />
-      <div class="card-body">
-        <h5 class="card-title">{user.name}</h5>
-        <p class="card-text">{useUser.bio}</p>
-        {/* <a href="#" class="btn btn-primary">
+    <div className="card">
+      <img className="card-img-top" src={user.photo} alt="user" />
+      <div className="card-body">
+        <h5 className="card-title">{user.name}</h5>
+        <p className="card-text">{useUser.bio}</p>
+        {/* <a href="#" className="btn btn-primary">
           Go somewhere
         </a> */}
       </div>

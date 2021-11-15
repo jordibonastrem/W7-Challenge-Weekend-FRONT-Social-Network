@@ -1,20 +1,20 @@
-// import { useEffect } from "react";
-// // import User from "../../components/User/User";
-// import useUserList from "../../hooks/useUserList";
-// // import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import User from "../../components/User/User";
+import useUserList from "../../hooks/useUserList";
+// import { useSelector } from "react-redux";
 
 const Home = () => {
-  // const { usersList, getUsers } = useUserList();
+  const { users, getUsers } = useUserList();
 
-  // useEffect(() => {
-  //   getUsers();
-  // }, [getUsers]);
+  useEffect(() => {
+    getUsers();
+  }, [getUsers]);
 
   return (
     <>
-      {/* {usersList.map((user) => (
-        <User key={user.name} user={user}></User>
-      ))} */}
+      {users.map((user) => (
+        <User key={user.id} user={user}></User>
+      ))}
     </>
   );
 };

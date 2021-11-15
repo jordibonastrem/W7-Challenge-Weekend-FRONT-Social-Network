@@ -29,12 +29,13 @@ export const getUsersThunk = () => async (dispatch) => {
   // const { token } = JSON.parse(
   // //   localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
   // // );
-
-  const { data: users } = await axios.get(
+  const { data } = await axios.get(
     process.env.REACT_APP_API_URL + userPaths.getUsers
   );
 
-  dispatch(getUsersAction(users));
+  console.log(data);
+  dispatch(getUsersAction(data));
+
 
   // const response = await fetch(
   //   process.env.REACT_APP_API_URL + userPaths.getUsers,
