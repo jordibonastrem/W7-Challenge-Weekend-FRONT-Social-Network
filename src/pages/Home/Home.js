@@ -1,14 +1,14 @@
-import { useEffect } from "react";
-import User from "../../components/User/User";
-import useUserList from "../../hooks/useUserList";
-import { useSelector } from "react-redux";
+// import { useEffect } from "react";
+// // import User from "../../components/User/User";
+// import useUserList from "../../hooks/useUserList";
+// // import { useSelector } from "react-redux";
 
 const Home = () => {
-  const { usersList, getUsers } = useUserList();
+  // const { usersList, getUsers } = useUserList();
 
-  useEffect(() => {
-    getUsers();
-  }, [getUsers]);
+  // useEffect(() => {
+  //   getUsers();
+  // }, [getUsers]);
 
   return (
     <>
