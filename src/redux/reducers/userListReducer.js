@@ -11,7 +11,6 @@ const userListReducer = (users = [], action) => {
     default:
   }
 
-  console.log("reducer:" + newUsersState);
   return newUsersState;
 };
 
