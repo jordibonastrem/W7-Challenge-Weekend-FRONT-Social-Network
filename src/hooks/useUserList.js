@@ -4,12 +4,11 @@ import { getUsersThunk } from "../redux/thunks/userThunks";
 
 const useUserList = () => {
   const dispatch = useDispatch();
-  const users = useSelector((store) => store.users);
+  const users = useSelector(({ userList }) => userList);
 
   const getUsers = useCallback(() => {
-    dispatch(getUsersThunk());
+    dispatch(getUsersThunk);
   }, [dispatch]);
-
   return {
     users,
     getUsers,
