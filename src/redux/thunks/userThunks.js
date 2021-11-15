@@ -32,8 +32,10 @@ export const getUsersThunk = () => async (dispatch) => {
   const { data } = await axios.get(
     process.env.REACT_APP_API_URL + userPaths.getUsers
   );
+
   console.log(data);
   dispatch(getUsersAction(data));
+
 
   // const response = await fetch(
   //   process.env.REACT_APP_API_URL + userPaths.getUsers,
